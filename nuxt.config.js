@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import { i18nOptions } from './locales/i18n'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -45,7 +46,8 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['nuxt-i18n'],
+  i18n: i18nOptions,
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
