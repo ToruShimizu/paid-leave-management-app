@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-leavemanagementapp-dev-224815-authRole",
+      "UnauthRoleArn": "arn:aws:iam::676281737186:role/amplify-leavemanagementapp-dev-224815-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::676281737186:role/amplify-leavemanagementapp-dev-224815-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-leavemanagementapp-dev-224815-deployment",
+      "UnauthRoleName": "amplify-leavemanagementapp-dev-224815-unauthRole",
+      "StackName": "amplify-leavemanagementapp-dev-224815",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:676281737186:stack/amplify-leavemanagementapp-dev-224815/d0d67280-e317-11eb-b562-06c3336b4a0d",
+      "AmplifyAppId": "dqo3my53cy5mx"
+    },
+    "categories": {
+      "auth": {
+        "leavemanagementapp2e930145": {}
+      }
+    }
+  }
+}
