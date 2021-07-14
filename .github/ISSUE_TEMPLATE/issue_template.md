@@ -7,7 +7,7 @@ assignees: ToruShimizu
 
 ---
 
-closes#
+closes #
 # 概要
 - 
 # TODO
