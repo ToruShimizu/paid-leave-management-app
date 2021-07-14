@@ -1,5 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 import { i18nOptions } from './locales/i18n'
+const envPath = `config/.env.${process.env.STAGE_NAME || 'local'}`
+require('dotenv').config({ path: envPath })
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -46,8 +48,9 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['nuxt-i18n'],
+  modules: ['nuxt-i18n', '@nuxtjs/dotenv'],
   i18n: i18nOptions,
+  dotenv: { filename: envPath },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
