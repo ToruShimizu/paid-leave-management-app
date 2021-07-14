@@ -4,13 +4,16 @@
       <p class="text-h4 font-weight-bold light-blue--text text--darken-4">有給休暇管理</p>
     </div>
     <div class="text-caption text-center grey--text mt-n2 mb-10">
-      <p>ユーザーネームとパスワードを入力してください</p>
+      <p>usernameとpasswordを入力してください</p>
     </div>
     <div align="center">
       <div><TextInput v-model="username" label="username" required /></div>
     </div>
     <div align="center">
       <div><TextInput v-model="password" label="password" required /></div>
+    </div>
+    <div align="center">
+      <div><AppBtn>ログイン</AppBtn></div>
     </div>
   </div>
 </template>
