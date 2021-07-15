@@ -87,6 +87,24 @@ https://jp.vuejs.org/v2/style-guide/index
 </script>
 
 ```
+
+```js
+// pages/HogeFuga.vue
+<template>
+  <v-row id="hoge-fuga">
+    // ...
+  </v-row>
+</template>
+<script lang="ts">
+  export default defineComponent({
+    name: 'PagesHogeFuga',
+
+    setup() {
+      // ...
+    }
+  })
+</script>
+
 ### 文言管理
 
 文言の管理は `i18n` を使用する。  
