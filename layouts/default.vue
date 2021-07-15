@@ -1,15 +1,28 @@
 <template>
-  <v-app dark>
-    <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
-    </v-main>
-  </v-app>
+  <div id="layouts-default">
+    <v-app>
+      <v-app-bar app color="light-blue darken-4">
+        <v-spacer />
+        <div class="navigation-btns d-flex">
+          <v-btn class="white--text" text nav> 有給管理メニュー </v-btn>
+          <v-btn class="white--text" text nav> アカウント管理メニュー </v-btn>
+        </div>
+      </v-app-bar>
+      <v-main>
+        <v-container>
+          <Nuxt />
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
 </template>
 
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'
 
-export default defineComponent({})
+export default defineComponent({
+  name: 'LayoutsDefault'
+})
 </script>
+
+<style scoped></style>
