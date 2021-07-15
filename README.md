@@ -104,6 +104,7 @@ https://jp.vuejs.org/v2/style-guide/index
     }
   })
 </script>
+```
 
 ### 文言管理
 
