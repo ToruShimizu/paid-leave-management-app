@@ -28,7 +28,7 @@ export const actions: ActionTree<RootState, RootState> = {
     const userData = await Auth.signIn(user.username, user.password)
     console.debug('userData: ', userData)
     commit('setUser', userData)
-
+    this.$router.push('/')
     if (userData.challengeParam === 'NEW_PASSWORD`REQUIRED') {
       await Auth.completeNewPassword(userData, user.password)
     }
