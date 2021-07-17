@@ -47,7 +47,9 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     // https://vite.nuxtjs.org/
-    'nuxt-vite'
+    'nuxt-vite',
+    // https://pwa.nuxtjs.org/
+    '@nuxtjs/pwa'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
