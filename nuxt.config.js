@@ -51,9 +51,19 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/dotenv', 'nuxt-i18n'],
+  modules: ['@nuxtjs/dotenv', 'nuxt-i18n', '@nuxtjs/sentry'],
   i18n: i18nOptions,
   dotenv: { filename: envPath },
+
+  sentry: {
+    dsn: process.env.SENTRY_PROJECT_URL,
+    publishRelease: process.env.STAGE_NAME === 'production' && process.env.NODE_ENV === 'production',
+    sourceMapStyle: 'hidden-source-map',
+    config: {
+      environment: process.env.STAGE_NAME
+    },
+    tracing: true
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
