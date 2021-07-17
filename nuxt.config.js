@@ -22,6 +22,9 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  router: {
+    middleware: ['checkAuthentication']
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
@@ -48,7 +51,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/dotenv'],
+  modules: ['@nuxtjs/dotenv', 'nuxt-i18n'],
   i18n: i18nOptions,
   dotenv: { filename: envPath },
 
