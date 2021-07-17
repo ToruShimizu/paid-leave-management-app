@@ -10,27 +10,41 @@
       <div><TextInput v-model="username" label="username" required /></div>
     </div>
     <div align="center">
-      <div><TextInput v-model="password" label="password" required /></div>
+      <div><TextInput v-model="password" type="password" label="password" required /></div>
     </div>
     <div align="center">
-      <div><AppBtn>ログイン</AppBtn></div>
+      <div>
+        <AppBtn color="blue darken-1" @click="signIn">ログイン</AppBtn>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from '@nuxtjs/composition-api'
+import { defineComponent, reactive, toRefs, useContext } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   name: 'PagesSignIn',
   layout: 'no-header',
   setup() {
+    const { app } = useContext()
     const signInInput = reactive({
       username: '',
       password: ''
     })
+
+    const signIn = () => {
+      try {
+        if (app.store) app.store.dispatch('user/signIn', signInInput)
+      } catch (e) {
+        console.error(e)
+      }
+    }
     return {
-      ...toRefs(signInInput)
+      /** data */
+      ...toRefs(signInInput),
+      /** methods */
+      signIn
     }
   }
 })
