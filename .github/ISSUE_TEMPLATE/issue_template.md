@@ -1,6 +1,6 @@
 ---
 name: issue_template
-about: Suggest an idea for this project
+about: create a issue
 title: ''
 labels: todo
 assignees: ToruShimizu
