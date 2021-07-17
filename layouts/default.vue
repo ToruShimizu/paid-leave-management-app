@@ -5,7 +5,7 @@
         <v-spacer />
         <div class="navigation-btns d-flex">
           <v-btn class="white--text" text nav> 有給管理メニュー </v-btn>
-          <v-btn class="white--text" text nav> アカウント管理メニュー </v-btn>
+          <AccountMenuList />
         </div>
       </v-app-bar>
       <v-main>

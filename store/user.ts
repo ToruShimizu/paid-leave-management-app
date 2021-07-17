@@ -36,5 +36,6 @@ export const actions: ActionTree<RootState, RootState> = {
   async signOut({ commit }) {
     await Auth.signOut()
     commit('resetUser')
+    this.$router.push('/sign-in')
   }
 }
