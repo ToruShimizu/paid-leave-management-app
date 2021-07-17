@@ -23,7 +23,7 @@
     "global": "^4.4.0",
     "graphql-tag": "^2.12.5",
     "nuxt": "^2.15.7",
-    "nuxt-i18n": "^6.27.3",
+    "nuxt-i18n": "6.15.1",
     "vuetify": "^2.5.5"
   },
   "devDependencies": {
