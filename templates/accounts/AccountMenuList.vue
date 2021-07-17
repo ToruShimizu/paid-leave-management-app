@@ -34,7 +34,7 @@ export default defineComponent({
 
     // TODO: アカウント編集機能を作成する
     const updateAccount = () => {
-      console.log('アカウント編集昨日は未実装です')
+      console.log('アカウント編集機能は未実装です')
     }
 
     return {
