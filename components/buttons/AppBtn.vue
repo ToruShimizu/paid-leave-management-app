@@ -5,7 +5,7 @@
     :outlined="outlined"
     :disabled="disabled"
     :color="color"
-    :width="width"
+    :width="$vuetify.breakpoint.xs ? 120 : width"
     height="2.1875rem"
     v-bind="bind"
     v-on="on"
