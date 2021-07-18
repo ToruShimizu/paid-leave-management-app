@@ -4,7 +4,7 @@
       <v-app-bar app color="light-blue darken-4">
         <v-spacer />
         <div class="navigation-btns d-flex">
-          <v-btn class="white--text" text nav> 有給管理メニュー </v-btn>
+          <LeaveManagementMenuList />
           <AccountMenuList />
         </div>
       </v-app-bar>
