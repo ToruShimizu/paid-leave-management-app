@@ -23,6 +23,7 @@
     "aws-amplify-vue": "^2.1.5",
     "aws-appsync": "^4.0.5",
     "core-js": "^3.15.1",
+    "dayjs": "^1.10.6",
     "global": "^4.4.0",
     "graphql-tag": "^2.12.5",
     "nuxt": "^2.15.7",
