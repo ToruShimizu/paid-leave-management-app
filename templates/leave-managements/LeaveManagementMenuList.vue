@@ -14,7 +14,7 @@
         </v-list-item>
       </v-list>
     </v-menu>
-    <RegisterLeaveDialog v-model="isOpenedRegisterLeaveDialog" @close="closeRegisterLeaveDialog" />
+    <LazyRegisterLeaveDialog v-model="isOpenedRegisterLeaveDialog" @close="closeRegisterLeaveDialog" />
   </div>
 </template>
 
