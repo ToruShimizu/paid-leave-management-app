@@ -11,6 +11,7 @@
       <v-main>
         <v-container>
           <Nuxt />
+          <AppLoader :message="message" :is-loading="isLoading" />
         </v-container>
       </v-main>
     </v-app>
@@ -18,11 +19,18 @@
 </template>
 
 <script>
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, provide } from '@nuxtjs/composition-api'
+import { AppLoaderKey, useAppLoader } from '~/modules/util/appLoader'
 
 export default defineComponent({
   name: 'LayoutsDefault',
-  middleware: 'checkAuthentication'
+  middleware: 'checkAuthentication',
+  setup() {
+    const { isLoading, message, appLoader } = useAppLoader()
+    provide(AppLoaderKey, { appLoader })
+
+    return { isLoading, message }
+  }
 })
 </script>
 
