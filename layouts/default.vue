@@ -26,8 +26,8 @@ export default defineComponent({
   name: 'LayoutsDefault',
   middleware: 'checkAuthentication',
   setup() {
-    const { isLoading, message, appLoader } = useAppLoader()
-    provide(AppLoaderKey, { appLoader })
+    const { isLoading, message, appLoader, messageType } = useAppLoader()
+    provide(AppLoaderKey, { appLoader, messageType })
 
     return { isLoading, message }
   }
