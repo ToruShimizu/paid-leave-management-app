@@ -5,7 +5,7 @@
         <v-btn class="white--text px-1" text nav v-bind="attrs" v-on="on"> 有給管理メニュー </v-btn>
       </template>
       <v-list>
-        <v-list-item @click="openRegisterLeaveDialog">
+        <v-list-item @click="openCreateLeaveDialog">
           <v-list-item-title>有給設定 </v-list-item-title>
         </v-list-item>
         <!-- TODO: 取得状況のダイアログを追加する -->
@@ -14,18 +14,18 @@
         </v-list-item>
       </v-list>
     </v-menu>
-    <LazyRegisterLeaveDialog v-model="isOpenedRegisterLeaveDialog" @close="closeRegisterLeaveDialog" />
+    <LazyCreateLeaveDialog v-model="isOpenedCreateLeaveDialog" @close="closeCreateLeaveDialog" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
-import { setRegisterLeaveDialogCtx } from '~/useCases/leave-managements/registerLeave'
+import { setCreateLeaveDialogCtx } from '~/useCases/leave-managements/createLeave'
 export default defineComponent({
   name: 'LeaveManagementMenuList',
   setup() {
     return {
-      ...setRegisterLeaveDialogCtx()
+      ...setCreateLeaveDialogCtx()
     }
   }
 })
