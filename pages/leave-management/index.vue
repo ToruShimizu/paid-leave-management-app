@@ -16,16 +16,17 @@
       </v-sheet>
     </v-toolbar>
     <v-sheet height="600">
-      <v-calendar ref="calenderRef" v-model="date" color="primary" type="month" @click:date="openCreateLeaveDialog" />
+      <v-calendar ref="calenderRef" v-model="date" color="primary" type="month" @click:date="openRegisterLeaveDialog" />
     </v-sheet>
     <!-- TODO: 有給登録コンポーネントを作成する -->
+    <LazyRegisterLeaveDialog v-model="isOpenedRegisterLeaveDialog" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, toRefs } from '@nuxtjs/composition-api'
 import { useLeaveManagement } from '~/useCases/leave-managements/leaveManagement'
-import { setCreateLeaveDialogCtx } from '~/useCases/leave-managements/createLeave'
+import { setRegisterLeaveDialogCtx } from '~/useCases/leave-managements/registerLeave'
 
 export default defineComponent({
   name: 'PagesLeaveManagement',
@@ -39,7 +40,7 @@ export default defineComponent({
       /** methods */
       prev,
       next,
-      ...setCreateLeaveDialogCtx()
+      ...setRegisterLeaveDialogCtx()
     }
   }
 })
