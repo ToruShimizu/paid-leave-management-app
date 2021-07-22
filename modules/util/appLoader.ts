@@ -1,14 +1,29 @@
-import { InjectionKey, ref } from '@nuxtjs/composition-api'
+import { InjectionKey, reactive, ref } from '@nuxtjs/composition-api'
 
-type MessageType = 'register' | 'create' | 'update' | 'delete' | 'fetch'
+enum MessageType {
+  REGISTER = 'register',
+  CREATE = 'create',
+  UPDATE = 'update',
+  DELETE = 'delete',
+  LOAD = 'load'
+}
 
 export const useAppLoader = () => {
   const isLoading = ref(false)
   const message = ref('')
 
+  const messageType = reactive({
+    register: MessageType.REGISTER,
+    create: MessageType.CREATE,
+    update: MessageType.UPDATE,
+    delete: MessageType.DELETE,
+    load: MessageType.LOAD
+  })
+
   const appLoader = {
     start: (type: MessageType) => {
       isLoading.value = true
+      // 画面に表示するメッセージ
       switch (type) {
         case 'register':
           message.value = '登録しています。'
@@ -18,7 +33,7 @@ export const useAppLoader = () => {
           message.value = '更新しています。'
         case 'delete':
           message.value = '削除しています。'
-        case 'fetch':
+        case 'load':
           message.value = '読み込んでいます。'
       }
     },
@@ -26,7 +41,7 @@ export const useAppLoader = () => {
       isLoading.value = false
     }
   }
-  return { isLoading, message, appLoader }
+  return { isLoading, message, appLoader, messageType }
 }
 export type UseAppLoader = ReturnType<typeof useAppLoader>
-export const AppLoaderKey: InjectionKey<UseAppLoader> = Symbol('AppLoader')
+export const AppLoaderKey: InjectionKey<Pick<UseAppLoader, 'appLoader' | 'messageType'>> = Symbol('AppLoader')
