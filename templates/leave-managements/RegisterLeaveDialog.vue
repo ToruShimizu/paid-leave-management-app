@@ -11,7 +11,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs, watch } from '@nuxtjs/composition-api'
+import { defineComponent, inject, reactive, toRefs, watch } from '@nuxtjs/composition-api'
+import { AppLoaderKey } from '~/modules/util/appLoader'
 
 const LEAVE_TYPES = [
   { text: '全休', value: 1 },
@@ -34,15 +35,26 @@ export default defineComponent({
     }
   },
   setup(props, { emit }) {
+    const { appLoader, messageType } = inject(AppLoaderKey)!
+    if (!appLoader && !messageType) throw new Error('AppLoaderKey is not provided')
+
     const registerLeaveInput = reactive({
       date: '',
       leaveUnit: 0,
       reason: ''
     })
+    // TODO: 登録機能を実装する
     const registerLeave = () => {
-      console.log(registerLeaveInput)
-      console.log('有給休暇登録機能は未実装')
-      emit('close')
+      appLoader.start(messageType.register)
+      try {
+        console.log(registerLeaveInput)
+        console.log('有給休暇登録機能は未実装')
+        emit('close')
+      } catch (e) {
+        console.error(e)
+      } finally {
+        appLoader.finish()
+      }
     }
     /*
     /** init
