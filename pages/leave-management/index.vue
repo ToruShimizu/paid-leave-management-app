@@ -18,8 +18,7 @@
     <v-sheet height="600">
       <v-calendar ref="calenderRef" v-model="date" color="primary" type="month" @click:date="openRegisterLeaveDialog" />
     </v-sheet>
-    <!-- TODO: 有給登録コンポーネントを作成する -->
-    <LazyRegisterLeaveDialog v-model="isOpenedRegisterLeaveDialog" />
+    <LazyRegisterLeaveDialog v-model="isOpenedRegisterLeaveDialog" :selected-date="date" />
   </div>
 </template>
 

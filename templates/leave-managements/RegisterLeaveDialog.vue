@@ -1,5 +1,6 @@
 <template>
   <AppDialog :is-opened="isOpened" class="register-leave-dialog" title="有給登録" @close="$emit('close')">
+    <DateInput v-model="date" />
     <SelectInput v-model="leaveUnit" :items="LEAVE_TYPES" label="休暇単位" required />
     <TextareaInput v-model="reason" label="理由" />
     <template v-slot:buttons>
@@ -10,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from '@nuxtjs/composition-api'
+import { defineComponent, reactive, toRefs, watch } from '@nuxtjs/composition-api'
 
 const LEAVE_TYPES = [
   { text: '全休', value: 1 },
@@ -26,10 +27,15 @@ export default defineComponent({
     isOpened: {
       type: Boolean,
       default: false
+    },
+    selectedDate: {
+      type: [Date, String],
+      default: ''
     }
   },
-  setup(_, { emit }) {
+  setup(props, { emit }) {
     const registerLeaveInput = reactive({
+      date: '',
       leaveUnit: 0,
       reason: ''
     })
@@ -38,6 +44,15 @@ export default defineComponent({
       console.log('有給休暇登録機能は未実装')
       emit('close')
     }
+    /*
+    /** init
+     */
+    watch(
+      () => props.isOpened,
+      val => {
+        if (val) registerLeaveInput.date = props.selectedDate
+      }
+    )
     return {
       /** data */
       LEAVE_TYPES,
