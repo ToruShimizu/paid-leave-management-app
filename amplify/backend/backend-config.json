@@ -1,6 +1,6 @@
 {
   "auth": {
-    "leavemanagementapp2e930145": {
+    "paidleavemanagementddf1dd74": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -8,7 +8,7 @@
     }
   },
   "api": {
-    "leaveManagementApp": {
+    "paidleaveamanagement": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -16,7 +16,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authleavemanagementapp2e930145"
+              "userPoolId": "authpaidleavemanagementddf1dd74"
             }
           },
           "additionalAuthenticationProviders": []

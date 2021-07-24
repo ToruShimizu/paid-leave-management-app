@@ -1,5 +1,5 @@
 {
-  "projectName": "leaveManagementApp",
+  "projectName": "paidleavemanagement",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
@@ -7,7 +7,7 @@
     "config": {
       "SourceDir": "src",
       "DistributionDir": "dist",
-      "BuildCommand": " yarn build",
+      "BuildCommand": "yarn build",
       "StartCommand": "yarn serve"
     }
   },

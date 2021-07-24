@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "leavemanagementapp2e930145_identitypool_2e930145",
+    "identityPoolName": "paidleavemanagementddf1dd74_identitypool_ddf1dd74",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "leavem2e930145",
-    "userPoolName": "leavemanagementapp2e930145_userpool_2e930145",
+    "resourceNameTruncated": "paidleddf1dd74",
+    "userPoolName": "paidleavemanagementddf1dd74_userpool_ddf1dd74",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "leavem2e930145_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "paidleddf1dd74_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "2e930145",
-    "resourceName": "leavemanagementapp2e930145",
+    "sharedId": "ddf1dd74",
+    "resourceName": "paidleavemanagementddf1dd74",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
