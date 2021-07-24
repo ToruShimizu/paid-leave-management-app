@@ -1,11 +1,11 @@
 <template>
-  <AppDialog :is-opened="isOpened" class="register-leave-dialog" title="有給登録" @close="$emit('close')">
+  <AppDialog :is-opened="isOpened" class="register-leave-dialog" width="500px" title="有給登録" @close="$emit('close')">
     <DateInput v-model="date" />
     <SelectInput v-model="leaveUnit" :items="LEAVE_TYPES" label="休暇単位" required />
     <TextareaInput v-model="reason" label="理由" />
     <template v-slot:buttons>
-      <AppBtn class="mr-2" @click="registerLeave">登録</AppBtn>
-      <AppBtn outlined class="ml-2" @click="$emit('close')">キャンセル</AppBtn>
+      <AppBtn class="mr-2" width="200px" @click="registerLeave">登録</AppBtn>
+      <AppBtn outlined class="ml-2" width="200px" @click="$emit('close')">キャンセル</AppBtn>
     </template>
   </AppDialog>
 </template>
