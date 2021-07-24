@@ -27,12 +27,16 @@ export const useAppLoader = () => {
       switch (type) {
         case 'register':
           message.value = '登録しています。'
+          break
         case 'create':
           message.value = '作成しています。'
+          break
         case 'update':
           message.value = '更新しています。'
+          break
         case 'delete':
           message.value = '削除しています。'
+          break
         case 'load':
           message.value = '読み込んでいます。'
       }
