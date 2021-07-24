@@ -1,7 +1,7 @@
-import { VCalender } from './../../types/component.d'
+import { VCalender } from '../../types/component'
 import { computed, reactive, ref, useContext } from '@nuxtjs/composition-api'
 
-export const useLeaveManagement = () => {
+export const usePaidLeaveManagement = () => {
   const { app } = useContext()
 
   const calenderInput = reactive({

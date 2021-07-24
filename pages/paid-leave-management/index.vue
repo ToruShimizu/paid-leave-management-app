@@ -1,5 +1,5 @@
 <template>
-  <div id="pages-leave-management">
+  <div id="pages-paid-leave-management">
     <v-toolbar flat>
       <v-sheet>
         <div class="d-flex">
@@ -24,22 +24,22 @@
         locale="ja-jp"
         :day-format="timestamp => new Date(timestamp.date).getDate()"
         :month-format="timestamp => new Date(timestamp.date).getMonth() + 1 + ' /'"
-        @click:date="openRegisterLeaveDialog"
+        @click:date="openRegisterPaidLeaveDialog"
       />
     </v-sheet>
-    <LazyRegisterLeaveDialog v-model="isOpenedRegisterLeaveDialog" :selected-date="date" />
+    <LazyRegisterLeaveDialog v-model="isOpenedRegisterPaidLeaveDialog" :selected-date="date" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, toRefs } from '@nuxtjs/composition-api'
-import { useLeaveManagement } from '~/useCases/leave-managements/leaveManagement'
-import { setRegisterLeaveDialogCtx } from '~/useCases/leave-managements/registerLeave'
+import { usePaidLeaveManagement } from '~/useCases/paid-leave-managements/paidLeaveManagement'
+import { setRegisterPaidLeaveDialogCtx } from '~/useCases/paid-leave-managements/registerPaidLeave'
 
 export default defineComponent({
-  name: 'PagesLeaveManagement',
+  name: 'PagesPaidLeaveManagement',
   setup() {
-    const { calenderRef, calenderInput, convertedDate, prev, next } = useLeaveManagement()
+    const { calenderRef, calenderInput, convertedDate, prev, next } = usePaidLeaveManagement()
     return {
       /** data */
       calenderRef,
@@ -48,7 +48,7 @@ export default defineComponent({
       /** methods */
       prev,
       next,
-      ...setRegisterLeaveDialogCtx()
+      ...setRegisterPaidLeaveDialogCtx()
     }
   }
 })

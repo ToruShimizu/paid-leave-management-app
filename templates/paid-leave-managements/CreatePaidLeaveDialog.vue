@@ -1,5 +1,5 @@
 <template>
-  <AppDialog :is-opened="isOpened" class="create-leave-dialog" title="有給設定" @close="$emit('close')">
+  <AppDialog :is-opened="isOpened" class="create-paid-leave-dialog" title="有給設定" @close="$emit('close')">
     <TextInput type="number" label="付与日数" />
     <TextInput label="取得目標" />
     <template v-slot:buttons>
@@ -13,7 +13,7 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
-  name: 'CreateLeaveDialog',
+  name: 'CreatePaidLeaveDialog',
   model: {
     prop: 'isOpened',
     event: 'close'
