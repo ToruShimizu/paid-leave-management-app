@@ -1,4 +1,4 @@
-# leave-management-app
+# paid-leave-management-app
 
 ## Build Setup
 
