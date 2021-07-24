@@ -16,7 +16,16 @@
       </v-sheet>
     </v-toolbar>
     <v-sheet height="600">
-      <v-calendar ref="calenderRef" v-model="date" color="primary" type="month" @click:date="openRegisterLeaveDialog" />
+      <v-calendar
+        ref="calenderRef"
+        v-model="date"
+        color="primary"
+        type="month"
+        locale="ja-jp"
+        :day-format="timestamp => new Date(timestamp.date).getDate()"
+        :month-format="timestamp => new Date(timestamp.date).getMonth() + 1 + ' /'"
+        @click:date="openRegisterLeaveDialog"
+      />
     </v-sheet>
     <LazyRegisterLeaveDialog v-model="isOpenedRegisterLeaveDialog" :selected-date="date" />
   </div>
